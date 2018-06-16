@@ -12,6 +12,7 @@
         <module>shop_common</module>
         <module>shop_system</module>
         <module>shop_config</module>
+        <module>shop_eureka</module>
     </modules>
     <packaging>pom</packaging>
 

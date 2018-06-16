@@ -1,18 +1,17 @@
-package com.wuxp.shop.member.config;
+package com.wuxp.shop.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.EnvironmentAware;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -25,11 +24,6 @@ import java.util.Properties;
  * @author wxup
  * @create 2018-06-16 11:21
  **/
-@Configuration
-//@Profile("local")
-@PropertySource("classpath:jdbc.properties")
-@EnableTransactionManagement
-@EnableJpaRepositories(basePackages = {"com.wuxp.shop.member.repository"})
 public class JpaConfig implements EnvironmentAware {
 
 
@@ -86,7 +80,7 @@ public class JpaConfig implements EnvironmentAware {
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        vendorAdapter.setGenerateDdl(true);
+        vendorAdapter.setGenerateDdl("local".equals(environment.getProperty("spring.profiles.active")));
         vendorAdapter.setShowSql(true);
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
