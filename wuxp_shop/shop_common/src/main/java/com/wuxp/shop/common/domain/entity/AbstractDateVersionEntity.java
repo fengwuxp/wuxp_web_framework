@@ -2,8 +2,6 @@ package com.wuxp.shop.common.domain.entity;
 
 import com.wuxp.common.annotation.Desc;
 import com.wuxp.shop.common.domain.Identifiable;
-import com.wuxp.shop.common.domain.NamedObject;
-import com.wuxp.shop.common.domain.SortableObject;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -21,29 +19,24 @@ import java.util.Date;
  * @create 2018-06-10 14:24
  **/
 @Data
-@Desc("抽象的基本实体")
+@Desc("带时间版本的实体")
 @MappedSuperclass
-public abstract class AbstractBaseEntity<ID extends Serializable, SORT_INDEX extends Number>
-        extends AbstractSortEntity<ID, SORT_INDEX>
-        implements Identifiable<ID>, NamedObject {
+public abstract class AbstractDateVersionEntity<ID extends Serializable> implements Identifiable<ID> {
 
 
-    private static final long serialVersionUID = -1952007989811242981L;
-
-
-    @Desc("名称")
-    @Column(name = "name", nullable = false)
-    protected String name;
+    private static final long serialVersionUID = 5673808672278538401L;
 
     @Desc("创建时间")
-    @Column(name = "create_time", nullable = false)
+    @Column(name = "create_time",nullable = false)
     @Temporal(value = TemporalType.TIMESTAMP)
     protected Date createTime = new Date();
 
     @Desc("最后更新时间")
-    @Column(name = "last_update_time", nullable = false)
+    @Column(name = "last_update_time",nullable = false)
     @Temporal(value = TemporalType.TIMESTAMP)
     protected Date lastUpdateTime;
+
+
 
 
     @Override

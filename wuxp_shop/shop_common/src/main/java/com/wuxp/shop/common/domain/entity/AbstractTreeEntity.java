@@ -20,7 +20,7 @@ import java.util.Set;
 @Desc("抽象的树形实体")
 @MappedSuperclass
 public abstract class AbstractTreeEntity<ID extends Serializable, T extends Identifiable<ID>>
-        extends AbstractBaseEntity<ID>
+        extends AbstractDateVersionEntity<ID>
         implements TreeObject<ID, T> , SortableObject<Integer>{
 
     private static final long serialVersionUID = -123456789L;

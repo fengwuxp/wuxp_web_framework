@@ -313,7 +313,7 @@
                                     <!-- when use filter to replace the @@, do not need copy the jdbc.properties to jar, we can remove the below code -->
                                     <resource>
                                         <!--<directory>src/main/resources/${spring.profiles.active}</directory>-->
-                                        <directory>${basedir}/../shop_config//src/main/resources/${spring.profiles.active}</directory>
+                                        <directory>${basedir}/../profile_config/${spring.profiles.active}</directory>
                                         <filtering>true</filtering>
                                     </resource>
                                     <resource>

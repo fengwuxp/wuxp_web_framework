@@ -2,7 +2,7 @@ package com.wuxp.shop.member.entities;
 
 
 import com.wuxp.common.annotation.Desc;
-import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
+import com.wuxp.shop.common.domain.entity.AbstractDateVersionEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -27,7 +27,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @EqualsAndHashCode(of = {"id"})
 @Entity
 @Table(name = "t_member_secure")
-public class MemberSecure extends AbstractBaseEntity<Long> {
+public class MemberSecure extends AbstractDateVersionEntity<Long> {
 
     private static final long serialVersionUID = -7638863164373869181L;
 

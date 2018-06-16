@@ -22,7 +22,7 @@ import static java.lang.Integer.compare;
 @Desc("抽象的带排序的实体")
 @MappedSuperclass
 public abstract class AbstractSortEntity<ID extends Serializable, SORT_INDEX extends Number>
-        extends AbstractBaseEntity<ID>
+        extends AbstractDateVersionEntity<ID>
         implements SortableObject<SORT_INDEX> {
 
 
@@ -32,8 +32,8 @@ public abstract class AbstractSortEntity<ID extends Serializable, SORT_INDEX ext
 
 
     @Override
-    public AbstractBaseEntity<ID> clone() throws CloneNotSupportedException {
-        return (AbstractBaseEntity<ID>) super.clone();
+    public AbstractDateVersionEntity<ID> clone() throws CloneNotSupportedException {
+        return (AbstractDateVersionEntity<ID>) super.clone();
     }
 
     @Override

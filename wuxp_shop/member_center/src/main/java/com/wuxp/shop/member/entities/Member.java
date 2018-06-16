@@ -1,7 +1,7 @@
 package com.wuxp.shop.member.entities;
 
 import com.wuxp.common.annotation.Desc;
-import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
+import com.wuxp.shop.common.domain.entity.AbstractDateVersionEntity;
 import com.wuxp.shop.member.enums.Gender;
 import com.wuxp.shop.member.enums.MemberVerifyStatus;
 import com.wuxp.shop.system.entities.Area;
@@ -28,7 +28,7 @@ import java.util.Date;
 @EqualsAndHashCode(of = {"id"})
 @Entity
 @Table(name = "t_member")
-public class Member extends AbstractBaseEntity<Long> {
+public class Member extends AbstractDateVersionEntity<Long> {
 
 
     private static final long serialVersionUID = 5776744718384493872L;

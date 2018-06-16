@@ -1,7 +1,8 @@
 package com.wuxp.shop.system.entities;
 
 import com.wuxp.common.annotation.Desc;
-import com.wuxp.shop.common.domain.entity.AbstractNamedEntity;
+import com.wuxp.shop.common.domain.EnabledObject;
+import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,52 +17,44 @@ import java.util.Set;
  * @author wxup
  * @create 2018-06-09 20:23
  **/
-@Entity
 @Desc("地区信息")
+@Entity
 @Table(name = "t_area")
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 @ToString(exclude = {"parent", "children"})
-public class Area extends AbstractNamedEntity<String> {
+public class Area extends AbstractBaseEntity<String, Short> implements EnabledObject {
 
     @Desc("地区编码")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false, length = 50)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false, length = 64)
     private String id;
 
     @Desc("地区父ID")
-    @Column(name = "parent_id", length = 50)
+    @Column(name = "parent_id", length = 64)
     private String parentId;
 
-    @Desc("地区名称")
-    @Column(name = "`name`", nullable = false, length = 200)
-    private String name;
-
     @Desc("地区简称")
-    @Column(name = "short_name", nullable = false, length = 200)
+    @Column(name = "short_name", nullable = false, length = 128)
     private String shortName;
 
     @Desc("经度")
-    @Column(name = "`longitude`", nullable = false, precision = 12)
+    @Column(name = "longitude", nullable = false, precision = 16)
     private Float longitude;
 
     @Desc("纬度")
-    @Column(name = "`latitude`", nullable = false, precision = 12)
+    @Column(name = "latitude", nullable = false, precision = 16)
     private Float latitude;
 
     @Desc("地区深度，从1开始")
-    @Column(name = "`level`", nullable = false)
-    private Integer level;
-
-    @Desc("排序")
-    @Column(name = "`sort`", nullable = false)
-    private Short sort;
+    @Column(name = "level", nullable = false)
+    private Short level;
 
     @Desc("地区启用状态")
-    @Column(name = "`status`", nullable = false)
-    private Boolean status;
+    @Column(name = "enabled", nullable = false)
+    private Boolean enabled;
 
     @Desc("第三方地区编码")
     @Column(name = "third_code")
@@ -77,4 +70,8 @@ public class Area extends AbstractNamedEntity<String> {
     private Set<Area> children;
 
 
+    @Override
+    public boolean isEnabled() {
+        return this.enabled;
+    }
 }
