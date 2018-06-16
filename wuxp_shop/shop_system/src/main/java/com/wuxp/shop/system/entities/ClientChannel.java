@@ -26,7 +26,7 @@ public class ClientChannel extends AbstractNamedEntity<Long> {
 
     @Desc("id")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Desc("渠道编号")

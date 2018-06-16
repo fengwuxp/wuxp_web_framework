@@ -27,6 +27,7 @@ public class Area extends AbstractNamedEntity<String> {
 
     @Desc("地区编码")
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false, length = 50)
     private String id;
 
