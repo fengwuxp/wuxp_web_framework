@@ -1,2 +1,18 @@
+
+
 server:
   port: 8080
+
+
+
+eureka:
+  client:
+    service-url:
+      ##单点配置:
+#      defaultZone: http://eureka1:8001/eureka/
+      ##高可用配置
+      defaultZone: http://shop_eureka:8001/eureka/,http://eureka2:8002/eureka/
+
+spring:
+  application:
+    name: member_center

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: shop_config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/baihezhuo/learngit ## prefix
+          search-paths:  #相对路径 #user-service, hello-service, luck-service
+
+
+server:
+  port: 4000
+
