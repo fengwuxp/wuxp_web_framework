@@ -1,6 +1,7 @@
-package com.wuxp.shop.member.entities;
+package com.wuxp.shop.system.entities;
 
 import com.wuxp.common.annotation.Desc;
+import com.wuxp.shop.common.domain.entity.AbstractNamedEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 @ToString(exclude = {"parent", "children"})
-public class Area implements java.io.Serializable {
+public class Area extends AbstractNamedEntity<String> {
 
     @Desc("地区编码")
     @Id

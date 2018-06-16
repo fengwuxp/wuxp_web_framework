@@ -97,7 +97,7 @@ public class JpaConfig implements EnvironmentAware {
         factory.setDataSource(dataSource());
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setJpaProperties(jpaProperties());
-        factory.setPackagesToScan("com.wuxp.shop.member.entities");
+        factory.setPackagesToScan("com.wuxp.shop.**.entities");
 
         //factory.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
         return factory;

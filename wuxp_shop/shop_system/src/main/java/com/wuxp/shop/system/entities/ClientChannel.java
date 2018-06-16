@@ -1,6 +1,7 @@
-package com.wuxp.shop.member.entities;
+package com.wuxp.shop.system.entities;
 
 import com.wuxp.common.annotation.Desc;
+import com.wuxp.shop.common.domain.entity.AbstractNamedEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -21,11 +22,15 @@ import java.util.Date;
 @Table(name = "t_client_channel")
 @Data
 @EqualsAndHashCode(of = {"code"})
-public class ClientChannel implements java.io.Serializable {
+public class ClientChannel extends AbstractNamedEntity<Long> {
+
+    @Desc("id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     @Desc("渠道编号")
-    @Id
-    @Column(name = "code", length = 64)
+    @Column(name = "code", length = 64,unique = true)
     private String code;
 
     @Desc("渠道名称")

@@ -1,7 +1,6 @@
 server:
   port: 8080
 
-
 spring:
    profiles:   ## application-{}.yml
     active: $spring.profiles.active$

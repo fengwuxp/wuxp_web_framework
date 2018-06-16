@@ -4,6 +4,8 @@ import com.wuxp.common.annotation.Desc;
 import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
 import com.wuxp.shop.member.enums.Gender;
 import com.wuxp.shop.member.enums.MemberVerifyStatus;
+import com.wuxp.shop.system.entities.Area;
+import com.wuxp.shop.system.entities.ClientChannel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -21,7 +23,7 @@ import java.util.Date;
 
 @Desc("用户信息")
 @Data
-@ToString(exclude={"memberSecure"})
+@ToString(exclude = {"memberSecure"})
 @NoArgsConstructor
 @EqualsAndHashCode(of = {"id"})
 @Entity
