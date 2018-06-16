@@ -20,7 +20,6 @@ import java.util.Date;
 @Desc("客户端渠道信息")
 @Table(name = "t_client_channel")
 @Data
-@NoArgsConstructor
 @EqualsAndHashCode(of = {"code"})
 public class ClientChannel implements java.io.Serializable {
 
