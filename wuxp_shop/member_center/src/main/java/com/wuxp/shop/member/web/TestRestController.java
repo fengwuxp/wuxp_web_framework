@@ -1,4 +1,4 @@
-package com.wuxp.shop.web;
+package com.wuxp.shop.member.web;
 
 
 import org.springframework.web.bind.annotation.*;

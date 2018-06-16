@@ -1,4 +1,4 @@
-package com.wuxp.shop.enums;
+package com.wuxp.shop.member.enums;
 
 import com.wuxp.common.annotation.Desc;
 import com.wuxp.common.core.enums.DescriptiveEnum;

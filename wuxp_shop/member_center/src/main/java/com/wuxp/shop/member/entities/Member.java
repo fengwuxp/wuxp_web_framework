@@ -1,9 +1,9 @@
-package com.wuxp.shop.common.entities;
+package com.wuxp.shop.member.entities;
 
 import com.wuxp.common.annotation.Desc;
 import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
-import com.wuxp.shop.enums.Gender;
-import com.wuxp.shop.enums.MemberVerifyStatus;
+import com.wuxp.shop.member.enums.Gender;
+import com.wuxp.shop.member.enums.MemberVerifyStatus;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;

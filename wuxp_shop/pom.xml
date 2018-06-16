@@ -106,6 +106,28 @@
             <scope>test</scope>
         </dependency>
 
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
+            <!--<version>8.0.11</version>-->
+            <!--<scope>runtime</scope>-->
+        </dependency>
+
+        <!--阿里巴巴数据库连接池，专为监控而生 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.6</version>
+        </dependency>
+        <!-- 阿里巴巴fastjson，解析json视图 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.46</version>
+        </dependency>
+
         <!--hibernate-->
         <dependency>
             <groupId>org.hibernate</groupId>

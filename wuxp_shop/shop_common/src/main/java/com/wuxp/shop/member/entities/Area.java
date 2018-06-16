@@ -1,4 +1,4 @@
-package com.wuxp.shop.common.entities;
+package com.wuxp.shop.member.entities;
 
 import com.wuxp.common.annotation.Desc;
 import lombok.Data;
