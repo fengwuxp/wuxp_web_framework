@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.EnvironmentAware;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -29,6 +26,7 @@ import java.util.Properties;
  * @create 2018-06-16 11:21
  **/
 @Configuration
+//@Profile("local")
 @PropertySource("classpath:jdbc.properties")
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.wuxp.shop.member.repository"})
@@ -50,7 +48,7 @@ public class JpaConfig implements EnvironmentAware {
 //                setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));
                 //allows Hibernate to generate SQL optimized for a particular relational database.
                 setProperty("hibernate.dialect", environment.getProperty("hibernate.dialect"));
-                setProperty("hibernate.show_sql",environment.getProperty("hibernate.show_sql"));
+                setProperty("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
             }
         };
     }
@@ -85,10 +83,8 @@ public class JpaConfig implements EnvironmentAware {
 //    }
 
 
-
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory()
-    {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(true);
@@ -97,15 +93,17 @@ public class JpaConfig implements EnvironmentAware {
         factory.setDataSource(dataSource());
         factory.setJpaVendorAdapter(vendorAdapter);
         factory.setJpaProperties(jpaProperties());
-        factory.setPackagesToScan("com.wuxp.shop.**.entities");
+        factory.setPackagesToScan(
+                "com.wuxp.shop.member.entities",
+                "com.wuxp.shop.system.entities"
+        );
 
         //factory.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
         return factory;
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager()
-    {
+    public PlatformTransactionManager transactionManager() {
         EntityManagerFactory factory = entityManagerFactory().getObject();
         return new JpaTransactionManager(factory);
     }

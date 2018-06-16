@@ -15,8 +15,12 @@
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/java" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
+    <content url="file://$MODULE_DIR$/../shop_config/src/main/resources/local">
+      <sourceFolder url="file://$MODULE_DIR$/../shop_config/src/main/resources/local" type="java-resource" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="shop_config" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-webflux:2.1.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.0.BUILD-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.1.0.BUILD-SNAPSHOT" level="project" />

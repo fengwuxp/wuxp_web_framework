@@ -22,7 +22,6 @@ import java.util.Date;
  **/
 @ActiveProfiles("local")
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration("classpath*:/application-local.yml")
 @SpringBootTest(classes = MemberApplication.class)
 public class MemberServiceImplTest {
 
@@ -41,8 +40,13 @@ public class MemberServiceImplTest {
         entity.setAddress("天字一号店");
         entity.setEmail("111231@.qq.com");
         entity.setGender(Gender.FEMALE);
-        entity.setRegDateTime(new Date());
+        Date date = new Date();
+        entity.setRegDateTime(date);
         entity.setEnable(Boolean.TRUE);
+        entity.setLastUpdateTime(date);
+        entity.setCreateTime(date);
+        entity.setIdAuth(false);
+        entity.setMobileAuth(false);
         Member member = memberRepository.save(entity);
 
         assert member.getId() != null;
