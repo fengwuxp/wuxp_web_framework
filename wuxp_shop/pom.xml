@@ -71,8 +71,8 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <!--<version>Dalston.SR1</version>-->
-                <version>${spring-cloud-connectors.version}</version>
+                <version>Camden.SR7</version>
+                <!--<version>${spring-cloud-connectors.version}</version>-->
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
