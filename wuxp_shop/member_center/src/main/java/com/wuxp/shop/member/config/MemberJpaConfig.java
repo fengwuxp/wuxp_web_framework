@@ -1,6 +1,6 @@
 package com.wuxp.shop.member.config;
 
-import com.wuxp.shop.config.JpaConfig;
+import com.wuxp.shop.config.database.JpaConfig;
 import org.springframework.context.annotation.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;

@@ -5,7 +5,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/baihezhuo/learngit ## prefix
+          ## prefix
+          uri: https://github.com/baihezhuo/learngit
           search-paths:  #相对路径 #user-service, hello-service, luck-service
 
 

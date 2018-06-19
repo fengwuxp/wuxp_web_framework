@@ -1,5 +1,6 @@
-package com.wuxp.shop.config;
+package com.wuxp.shop.config.database;
 
+import com.alibaba.druid.pool.DruidDataSource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -47,11 +48,15 @@ public class JpaConfig implements EnvironmentAware {
         };
     }
 
-    @Bean
+    /**
+     * ali druid数据库连接池
+     * @return
+     */
+    @Bean(destroyMethod = "close",initMethod="init")
     @Primary
     @ConfigurationProperties(prefix = "jdbc")
-    public DataSource dataSource() {
-        DataSource dataSource = DataSourceBuilder.create().type(com.alibaba.druid.pool.DruidDataSource.class).build();
+    public DruidDataSource dataSource() {
+        DruidDataSource dataSource = DataSourceBuilder.create().type(DruidDataSource.class).build();
         logger.info("初始化ali druid数据库连接池");
         return dataSource;
     }
