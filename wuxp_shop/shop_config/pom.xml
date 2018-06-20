@@ -14,13 +14,10 @@
 
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
-            <version>${spring.cloud.version}</version>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>

@@ -1,19 +1,44 @@
+spring:
+  application:
+    name: shop_eureka
+
+logging:
+  file: ./logs/eureka-server.log  # 打印日志到文件
+  level:
+    ROOT: INFO
+
+---
 server:
-  port: 8001
+  port: 8761
 eureka:
   instance:
     hostname: eureka1
-     ##客户端向服务器（注册中心发送心跳的时间间隔）
+    ##客户端向服务器（注册中心发送心跳的时间间隔）
+    lease-renewal-interval-in-seconds: 10
+     ##服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
+    lease-expiration-duration-in-seconds: 120
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka2:8762/eureka/
+
+---
+
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: eureka2
+    ##客户端向服务器（注册中心发送心跳的时间间隔）
     lease-renewal-interval-in-seconds: 10
     ##服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
     lease-expiration-duration-in-seconds: 120
   client:
-    service-url:
-      defaultZone: http://eureka1:8001/eureka/
-#       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-      ##互相注册到对方--高可用服务发现
-#      defaultZone: http://eureka2:8002/eureka/
-#    register-with-eureka: false
-#    fetch-registry: false
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/
+---
 
 
