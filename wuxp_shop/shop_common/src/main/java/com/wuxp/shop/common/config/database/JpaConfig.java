@@ -1,4 +1,4 @@
-package com.wuxp.shop.config.database;
+package com.wuxp.shop.common.config.database;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.slf4j.Logger;
@@ -15,7 +15,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
 import java.util.Properties;
 
 

@@ -1,10 +1,4 @@
-package com.wuxp.shop.config.database;
-
-import com.alibaba.druid.support.http.StatViewServlet;
-import com.alibaba.druid.support.http.WebStatFilter;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
+package com.wuxp.shop.common.config.database;
 
 /**
  * ali druid数据库连接池配置

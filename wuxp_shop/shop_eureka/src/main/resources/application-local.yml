@@ -13,15 +13,30 @@ server:
 eureka:
   instance:
     hostname: eureka1
-    ##客户端向服务器（注册中心发送心跳的时间间隔）
+    #客户端向服务器（注册中心发送心跳的时间间隔）
     lease-renewal-interval-in-seconds: 10
-     ##服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
+    #服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
     lease-expiration-duration-in-seconds: 120
+    #实例名称显示IP配置
+    prefer-ip-address: true
+  server:
+    #自我保存
+    enable-self-preservation: false
+    #清理间隔（单位毫秒）
+    eviction-interval-timer-in-ms: 60000
+    # Eureka Server 自我保护系数，当enable-self-preservation=true时，启作用
+    # renewal-percent-threshold:
+    #设置如果Eureka Server启动时无法从临近Eureka Server节点获取注册信息，它多久不对外提供注册服务
+    wait-time-in-ms-when-sync-empty: 6000000
+    #集群之间相互更新节点信息的时间频率
+    peer-eureka-nodes-update-interval-ms: 60000
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://eureka2:8762/eureka/
+     #是否向服务注册中心注册自己
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+    service-url:
+      default-zone: http://eureka2:8762/eureka/
 
 ---
 
@@ -30,15 +45,31 @@ server:
 eureka:
   instance:
     hostname: eureka2
-    ##客户端向服务器（注册中心发送心跳的时间间隔）
+    #客户端向服务器（注册中心发送心跳的时间间隔）
     lease-renewal-interval-in-seconds: 10
-    ##服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
+    #服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
     lease-expiration-duration-in-seconds: 120
+    #实例名称显示IP配置
+    prefer-ip-address: true
+  server:
+     #自我保存
+     enable-self-preservation: false
+     #清理间隔（单位毫秒，默认是60*1000）
+     eviction-interval-timer-in-ms: 60000
+     # Eureka Server 自我保护系数，当enable-self-preservation=true时，启作用
+     # renewal-percent-threshold:
+     #设置如果Eureka Server启动时无法从临近Eureka Server节点获取注册信息，它多久不对外提供注册服务
+     wait-time-in-ms-when-sync-empty: 6000000
+     #集群之间相互更新节点信息的时间频率
+     peer-eureka-nodes-update-interval-ms: 60000
   client:
-    registerWithEureka: false
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://eureka1:8761/eureka/
+    #是否向服务注册中心注册自己
+    register-with-eureka: false
+    #是否检索服务
+    fetch-registry: false
+    service-url:
+      default-zone: http://eureka1:8761/eureka/
+
 ---
 
 
