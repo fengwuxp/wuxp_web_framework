@@ -33,14 +33,14 @@
 
 ##### eureka client( Eureka客户端)       
 
-*Eureka客户端，主要处理服务的注册和发现。客户端服务通过注册和参数配置的方式，嵌入在客户端应用程序的代码中。在应用程序启动时，
-*Eureka客户端向服务注册中心注册自身提供的服务，并周期性的发送心跳来更新它的服务租约。同时，他也能从服务端查询当前注册的服务信息并把它们缓存到本地并周期行的刷新服务状态。
+* Eureka客户端，主要处理服务的注册和发现。客户端服务通过注册和参数配置的方式，嵌入在客户端应用程序的代码中。在应用程序启动时，
+* Eureka客户端向服务注册中心注册自身提供的服务，并周期性的发送心跳来更新它的服务租约。同时，他也能从服务端查询当前注册的服务信息并把它们缓存到本地并周期行的刷新服务状态。
+* 配置详解 [https://www.cnblogs.com/xiemubg/p/7381055.html] [https://www.cnblogs.com/li3807/p/7282492.html]
 
 -------------------------------
-#### 常见问题
+#### 常见问题 参考文章 [https://blog.csdn.net/lc0817/article/details/54375802]
 
 1. Eureka 之集群同步，自我保护模式以及实例注册、心跳、下线 参考文章 [https://blog.csdn.net/hry2015/article/details/78245149] [https://blog.csdn.net/rickiyeat/article/details/71041648]
-2. 服务监控(spring-boot-starter-actuator) 参考文章[https://www.jianshu.com/p/481134c3fab7] [https://www.cnblogs.com/EasonJim/p/7613333.html]
 
 --------------------------------
 
