@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: shop_eureka
+  profiles:   ## application-{}.yml
+    active: $spring.profiles.active$
+
