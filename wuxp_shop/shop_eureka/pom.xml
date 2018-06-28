@@ -49,8 +49,14 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.1.1</version>
                 <configuration>
+                    <!-- 镜像名称 -->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
-                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <!-- 依赖java镜像 -->
+                    <baseImage>java</baseImage>
+                    <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+                    <!--<dockerHost>tcp://127.0.0.1:2375</dockerHost>-->
+                    <!--dockerFile文件所在的位置-->
+                    <!--<dockerDirectory>src/main/docker</dockerDirectory>-->
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -59,6 +65,8 @@
                         </resource>
                     </resources>
                 </configuration>
+
+
             </plugin>
         </plugins>
     </build>

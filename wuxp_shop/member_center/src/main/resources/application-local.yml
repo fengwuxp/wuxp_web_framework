@@ -5,21 +5,21 @@ spring:
   application:
     name: member_center
 
-eureka:
-  instance:
-    #使用IP注册
-    preferIpAddress: false
-    #心跳间隔（默认30秒）
-    leaseRenewalIntervalInSeconds: 30
-    #服务失效时间： 如果多久没有收到请求，则可以删除服务（默认90秒）
-    leaseExpirationDurationInSeconds: 90
-  client:
-    #客户端从Eureka Server集群里更新Eureka Server信息的频率
-    eurekaServiceUrlPollIntervalSeconds: 60
-    #定义从注册中心获取注册服务的信息
-    registryFetchIntervalSeconds: 5
-    serviceUrl:
-      ##高可用配置
-      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+#eureka:
+#  instance:
+#    #使用IP注册
+#    preferIpAddress: false
+#    #心跳间隔（默认30秒）
+#    leaseRenewalIntervalInSeconds: 30
+#    #服务失效时间： 如果多久没有收到请求，则可以删除服务（默认90秒）
+#    leaseExpirationDurationInSeconds: 90
+#  client:
+#    #客户端从Eureka Server集群里更新Eureka Server信息的频率
+#    eurekaServiceUrlPollIntervalSeconds: 60
+#    #定义从注册中心获取注册服务的信息
+#    registryFetchIntervalSeconds: 5
+#    serviceUrl:
+#      ##高可用配置
+#      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
 
 
