@@ -21,14 +21,14 @@
     <description>spring shop</description>
 
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.RELEASE</version>
-        <!--<version>2.1.0.BUILD-SNAPSHOT</version>-->
-        <!--<version>2.0.1.RELEASE</version>-->
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+    <!--<parent>-->
+    <!--<groupId>org.springframework.boot</groupId>-->
+    <!--<artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--<version>2.0.0.RELEASE</version>-->
+    <!--&lt;!&ndash;<version>2.1.0.BUILD-SNAPSHOT</version>&ndash;&gt;-->
+    <!--&lt;!&ndash;<version>2.0.1.RELEASE</version>&ndash;&gt;-->
+    <!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--</parent>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -71,7 +71,25 @@
     </profiles>
 
 
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.0.2.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
 
@@ -84,10 +102,9 @@
         </dependency>
 
 
-
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-webflux</artifactId>-->
         <!--</dependency>-->
 
 
@@ -97,23 +114,23 @@
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-actuator</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-aop</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-aop</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-cache</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-jta-atomikos</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jta-atomikos</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
@@ -122,18 +139,18 @@
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-validation</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-validation</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.retry</groupId>-->
-            <!--<artifactId>spring-retry</artifactId>-->
+        <!--<groupId>org.springframework.retry</groupId>-->
+        <!--<artifactId>spring-retry</artifactId>-->
         <!--</dependency>-->
 
         <!--<dependency>-->
-            <!--<groupId>org.springframework.session</groupId>-->
-            <!--<artifactId>spring-session-core</artifactId>-->
+        <!--<groupId>org.springframework.session</groupId>-->
+        <!--<artifactId>spring-session-core</artifactId>-->
         <!--</dependency>-->
 
         <dependency>
@@ -271,18 +288,18 @@
 
                 <!-- MAVEN打包时动态切换: mvn clean package -P prod/dev/local -->
                 <!--<plugin>-->
-                    <!--<groupId>org.apache.maven.plugins</groupId>-->
-                    <!--<artifactId>maven-resources-plugin</artifactId>-->
-                    <!--<version>3.0.2</version>-->
-                    <!--<configuration>-->
-                        <!--&lt;!&ndash;<delimiters>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<delimiter>${resource.delimiter}</delimiter>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</delimiters>&ndash;&gt;-->
-                        <!--<delimiters>-->
-                            <!--<delimiter>$</delimiter>-->
-                        <!--</delimiters>-->
-                        <!--<useDefaultDelimiters>false</useDefaultDelimiters>-->
-                    <!--</configuration>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-resources-plugin</artifactId>-->
+                <!--<version>3.0.2</version>-->
+                <!--<configuration>-->
+                <!--&lt;!&ndash;<delimiters>&ndash;&gt;-->
+                <!--&lt;!&ndash;<delimiter>${resource.delimiter}</delimiter>&ndash;&gt;-->
+                <!--&lt;!&ndash;</delimiters>&ndash;&gt;-->
+                <!--<delimiters>-->
+                <!--<delimiter>$</delimiter>-->
+                <!--</delimiters>-->
+                <!--<useDefaultDelimiters>false</useDefaultDelimiters>-->
+                <!--</configuration>-->
                 <!--</plugin>-->
                 <!-- 单元测试 -->
                 <plugin>
