@@ -5,3 +5,6 @@
 #### 单机版，参加application-local.yml配置 参考 [https://blog.csdn.net/liuchuanhong1/article/details/54895070]
 
 #### 参考文章 [https://blog.csdn.net/sunhuiliang85/article/details/76222517]
+
+
+#### docker 部署 [http://www.cnblogs.com/520playboy/p/7929500.html]

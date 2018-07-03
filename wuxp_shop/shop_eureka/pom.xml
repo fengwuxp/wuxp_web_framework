@@ -48,7 +48,7 @@
                 </executions>
                 <configuration>
                     <!--安装了docker的主机，并且打开了api remote接口设置-->
-                    <dockerHost>http://127.0.0.1:5678</dockerHost>
+                    <!--<dockerHost>http://127.0.0.1:5678</dockerHost>-->
                     <!--设置上传镜像到私有仓库，需要docker设置指定私有仓库地址-->
                     <pushImage>true</pushImage>
                     <!-- 镜像名称 -->
