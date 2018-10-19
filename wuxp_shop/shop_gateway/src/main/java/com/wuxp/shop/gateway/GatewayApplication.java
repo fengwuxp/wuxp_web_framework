@@ -27,7 +27,7 @@ public class GatewayApplication {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 //basic proxy
-                .route(r -> r.path("/baidu")
+                .route(r -> r.path("/baidu").and()
                         .uri("http://baidu.com:80/")
                 ).build();
     }

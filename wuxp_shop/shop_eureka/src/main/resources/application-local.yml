@@ -12,7 +12,8 @@ server:
   port: 8761
 eureka:
   instance:
-    hostname: eureka1
+    hostname: eureka1,
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}},
     #客户端向服务器（注册中心发送心跳的时间间隔）
     lease-renewal-interval-in-seconds: 10
     #服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
@@ -44,7 +45,8 @@ server:
   port: 8762
 eureka:
   instance:
-    hostname: eureka2
+    hostname: eureka2,
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}},
     #客户端向服务器（注册中心发送心跳的时间间隔）
     lease-renewal-interval-in-seconds: 10
     #服务器（注册中心）租期到期的时间, 也就是说服务器在收到最后一次心跳的时间上线
