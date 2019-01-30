@@ -4,7 +4,7 @@
 
 #### spring cloud使用 eureka来治理服务，所有的服务都需要注册到eureka服务注册中心上
 
-##### 参考文章[https://blog.csdn.net/sunhuiliang85/article/details/76222517]
+##### 参考文章[Spring Cloud Eureka详解](https://blog.csdn.net/sunhuiliang85/article/details/76222517)
 
 ---------------------
 
@@ -27,7 +27,7 @@
       2: 在启动类上加上注解: @EnableEurekaServer   
 
 ##### 配置相关
-* eureka.instance.prefer-ip-address [http://www.itmuch.com/spring-cloud-code-read/spring-cloud-code-read-eureka-registry-ip/]
+* eureka.instance.prefer-ip-address [Eureka服务注册过程详解之IpAddress](http://www.itmuch.com/spring-cloud-code-read/spring-cloud-code-read-eureka-registry-ip/)
 
 -------------------------------
 
@@ -35,12 +35,14 @@
 
 * Eureka客户端，主要处理服务的注册和发现。客户端服务通过注册和参数配置的方式，嵌入在客户端应用程序的代码中。在应用程序启动时，
 * Eureka客户端向服务注册中心注册自身提供的服务，并周期性的发送心跳来更新它的服务租约。同时，他也能从服务端查询当前注册的服务信息并把它们缓存到本地并周期行的刷新服务状态。
-* 配置详解 [https://www.cnblogs.com/xiemubg/p/7381055.html] [https://www.cnblogs.com/li3807/p/7282492.html]
+* 配置详解：参考[Spring Cloud Eureka 常用配置及说明](https://www.cnblogs.com/li3807/p/7282492.html)
 
 -------------------------------
-#### 常见问题 参考文章 [https://blog.csdn.net/lc0817/article/details/54375802]
+#### 常见问题 参考文章 [Spring Cloud中，Eureka常见问题总结](https://blog.csdn.net/lc0817/article/details/54375802)
 
-1. Eureka 之集群同步，自我保护模式以及实例注册、心跳、下线 参考文章 [https://blog.csdn.net/hry2015/article/details/78245149] [https://blog.csdn.net/rickiyeat/article/details/71041648]
+* Eureka 之集群同步，自我保护模式以及实例注册、心跳、下线 参考文章:
+- [Spring cloud系列五 Eureka 之集群同步、自我保护模式以及实例注册、心跳、下线](https://blog.csdn.net/hry2015/article/details/78245149)
+- [如何解决Eureka Server不剔除已关停的节点的问题](https://blog.csdn.net/rickiyeat/article/details/71041648)
 
 --------------------------------
 

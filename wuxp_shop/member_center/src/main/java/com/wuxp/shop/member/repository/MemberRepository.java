@@ -7,7 +7,7 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.io.Serializable;
 
 /**
- * member reository
+ * member reposityory
  *
  * @author wxup
  * @create 2018-06-16 12:03
