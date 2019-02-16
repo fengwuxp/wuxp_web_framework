@@ -36,7 +36,7 @@ public class JpaConfig implements EnvironmentAware {
         this.environment = environment;
     }
 
-    Properties jpaProperties() {
+    private Properties jpaProperties() {
         return new Properties() {
             {
 //                setProperty("hibernate.hbm2ddl.auto", environment.getProperty("hibernate.hbm2ddl.auto"));

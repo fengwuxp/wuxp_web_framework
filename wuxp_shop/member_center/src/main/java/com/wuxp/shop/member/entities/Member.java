@@ -6,10 +6,8 @@ import com.wuxp.shop.member.enums.Gender;
 import com.wuxp.shop.member.enums.MemberVerifyStatus;
 import com.wuxp.shop.system.entities.Area;
 import com.wuxp.shop.system.entities.ClientChannel;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -25,7 +23,9 @@ import java.util.Date;
 @Data
 @ToString(exclude = {"memberSecure"})
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
+@AllArgsConstructor
+@EqualsAndHashCode(of = {"id"}, callSuper = false)
+@Accessors(chain = true)
 @Entity
 @Table(name = "t_member")
 public class Member extends AbstractDateVersionEntity<Long> {

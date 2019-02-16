@@ -3,10 +3,8 @@ package com.wuxp.shop.system.entities;
 import com.wuxp.common.annotation.Desc;
 import com.wuxp.shop.common.domain.EnabledObject;
 import com.wuxp.shop.common.domain.entity.AbstractBaseEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -18,14 +16,17 @@ import java.util.Set;
  * @create 2018-06-09 20:23
  **/
 @Desc("地区信息")
-@Entity
-@Table(name = "t_area")
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
+@AllArgsConstructor
+@EqualsAndHashCode(of = {"id"}, callSuper = false)
+@Accessors(chain = true)
 @ToString(exclude = {"parent", "children"})
+@Entity
+@Table(name = "t_area")
 public class Area extends AbstractBaseEntity<String, Short> implements EnabledObject {
 
+    private static final long serialVersionUID = 406297854815561330L;
     @Desc("地区编码")
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)

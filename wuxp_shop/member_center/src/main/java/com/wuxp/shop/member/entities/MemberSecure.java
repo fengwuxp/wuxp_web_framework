@@ -3,10 +3,8 @@ package com.wuxp.shop.member.entities;
 
 import com.wuxp.common.annotation.Desc;
 import com.wuxp.shop.common.domain.entity.AbstractDateVersionEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,7 +22,9 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Data
 @ToString(exclude = {"member"})
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"id"})
+@AllArgsConstructor
+@EqualsAndHashCode(of = {"id"}, callSuper = false)
+@Accessors(chain = true)
 @Entity
 @Table(name = "t_member_secure")
 public class MemberSecure extends AbstractDateVersionEntity<Long> {
