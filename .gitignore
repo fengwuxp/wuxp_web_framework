@@ -3,4 +3,4 @@
 **/target
 **/transaction-logs
 **/logs
-*.iml
+**/*.iml
