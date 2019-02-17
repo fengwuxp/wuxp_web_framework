@@ -6,17 +6,17 @@ import org.springframework.core.Ordered;
 
 
 /**
- * 前置处理
+ * 后置处理者
  *
  * @param <T>
  */
-@Desc("前置预处理者")
-public interface PrevProcessor<T> extends BeanRunTimeCondition, Ordered {
+@Desc("后置处理者")
+public interface PostProcessor<T> extends BeanRunTimeCondition, Ordered {
 
     /**
-     * 前置处理
+     * 后置处理
      *
      * @param t
      */
-    void prevProcess(T t);
+    void postProcessor(T t);
 }

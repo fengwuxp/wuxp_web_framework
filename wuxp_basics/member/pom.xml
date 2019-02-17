@@ -3,27 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>wuxp_common</artifactId>
-        <groupId>com.wuxp.common</groupId>
+        <groupId>com.wuxp.framework</groupId>
+        <artifactId>wuxp_basics</artifactId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wuxp_common_core</artifactId>
+    <artifactId>wuxp_basics_member</artifactId>
+
     <dependencies>
-
         <dependency>
-            <groupId>com.wuxp.common</groupId>
-            <artifactId>wuxp_common_annotation</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <scope>compile</scope>
+            <groupId>com.wuxp.framework</groupId>
+            <artifactId>wuxp_basics_common</artifactId>
+            <version>0.0.1</version>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
+            <groupId>com.wuxp.framework</groupId>
+            <artifactId>wuxp_baisics_system</artifactId>
+            <version>0.0.1</version>
         </dependency>
     </dependencies>
-
-
 </project>
