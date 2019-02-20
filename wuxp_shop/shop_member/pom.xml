@@ -15,9 +15,9 @@
 
 
         <dependency>
-            <groupId>com.wuxp.framework</groupId>
-            <artifactId>wuxp_basics_member</artifactId>
-            <version>0.0.1</version>
+            <groupId>com.wuxp.basic</groupId>
+            <artifactId>wuxp_basic_member</artifactId>
+            <version>${wuxp.basic.version}</version>
         </dependency>
 
         <!--<dependency>-->

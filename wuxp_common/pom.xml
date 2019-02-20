@@ -9,6 +9,7 @@
         <artifactId>wuxp_framework</artifactId>
         <version>0.0.1</version>
     </parent>
+    
     <groupId>com.wuxp.common</groupId>
     <artifactId>wuxp_common</artifactId>
     <packaging>pom</packaging>
@@ -19,9 +20,10 @@
     </properties>
 
     <modules>
-        <module>common_service</module>
         <module>common_annotation</module>
         <module>common_core</module>
+        <module>common_resources</module>
+        <module>common_service</module>
     </modules>
 
 

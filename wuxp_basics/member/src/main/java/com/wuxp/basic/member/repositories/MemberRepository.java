@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
 
-
 /**
  * member repositories
  *
@@ -13,4 +12,5 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
  * @create 2018-06-16 12:03
  **/
 public interface MemberRepository extends JpaRepository<Member, Long>, QuerydslPredicateExecutor<Long> {
+
 }

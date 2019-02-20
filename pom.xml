@@ -22,6 +22,12 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <querydsl.version>4.2.1</querydsl.version>
+        <querydsl.apt.plugin.version>1.1.3</querydsl.apt.plugin.version>
+
+        <wuxp.basic.version>0.0.1</wuxp.basic.version>
+        <wuxp.common.version>0.0.1</wuxp.common.version>
+        <wuxp.shop.version>0.0.1</wuxp.shop.version>
+
     </properties>
 
     <modules>
@@ -29,6 +35,11 @@
         <module>wuxp_shop</module>
         <module>wuxp_basics</module>
     </modules>
+
+    <!--只是对版本进行管理，不会实际引入jar  -->
+    <dependencyManagement>
+
+    </dependencyManagement>
 
     <dependencies>
 

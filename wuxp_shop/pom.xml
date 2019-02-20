@@ -12,7 +12,7 @@
 
     <groupId>com.wuxp.shop</groupId>
     <artifactId>wuxp_shop</artifactId>
-    <version>0.0.1</version>
+    <version>${wuxp.shop.version}</version>
     <packaging>pom</packaging>
     <name>wuxp_shop</name>
     <description>spring shop</description>

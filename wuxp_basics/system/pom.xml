@@ -3,19 +3,48 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>wuxp_basics</artifactId>
-        <groupId>com.wuxp.framework</groupId>
+        <groupId>com.wuxp.basic</groupId>
+        <artifactId>wuxp_basic</artifactId>
         <version>0.0.1</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wuxp_baisics_system</artifactId>
+    <artifactId>wuxp_baisic_system</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.wuxp.framework</groupId>
-            <artifactId>wuxp_basics_common</artifactId>
-            <version>0.0.1</version>
+            <groupId>com.wuxp.basic</groupId>
+            <artifactId>wuxp_basic</artifactId>
+            <version>${wuxp.basic.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!--query dsl-->
+            <plugin>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>${querydsl.apt.plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/generated-sources/java</outputDirectory>
+                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.querydsl</groupId>
+                        <artifactId>querydsl-apt</artifactId>
+                        <version>${querydsl.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>

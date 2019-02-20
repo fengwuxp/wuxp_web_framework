@@ -9,23 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>wuxp_basics</artifactId>
+    <groupId>com.wuxp.basic</groupId>
+    <artifactId>wuxp_basic</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1</version>
+    <version>${wuxp.basic.version}</version>
 
     <modules>
+        <module>common</module>
         <module>member</module>
         <module>system</module>
-        <module>common</module>
     </modules>
 
+    <properties>
+
+    </properties>
 
     <dependencies>
 
         <dependency>
             <groupId>com.wuxp.common</groupId>
             <artifactId>wuxp_common_core</artifactId>
-            <version>0.0.1</version>
+            <version>${wuxp.common.version}</version>
         </dependency>
 
         <dependency>
@@ -38,32 +42,8 @@
 
     <build>
         <plugins>
-            <!--query dsl-->
-            <plugin>
-                <groupId>com.mysema.maven</groupId>
-                <artifactId>apt-maven-plugin</artifactId>
-                <version>1.1.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>process</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>target/generated-sources/java</outputDirectory>
-                            <processor>com.querydsl.apt.jpa.JPAAnnotationProcessor</processor>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.querydsl</groupId>
-                        <artifactId>querydsl-apt</artifactId>
-                        <version>${querydsl.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-        </plugins>
 
+        </plugins>
     </build>
 
 </project>
