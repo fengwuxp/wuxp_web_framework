@@ -12,7 +12,6 @@
     <groupId>com.wuxp.basic</groupId>
     <artifactId>wuxp_basic</artifactId>
     <packaging>pom</packaging>
-    <version>${wuxp.basic.version}</version>
 
     <modules>
         <module>common</module>
@@ -21,7 +20,6 @@
     </modules>
 
     <properties>
-
     </properties>
 
     <dependencies>

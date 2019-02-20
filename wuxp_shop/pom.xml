@@ -12,7 +12,6 @@
 
     <groupId>com.wuxp.shop</groupId>
     <artifactId>wuxp_shop</artifactId>
-    <version>${wuxp.shop.version}</version>
     <packaging>pom</packaging>
     <name>wuxp_shop</name>
     <description>spring shop</description>

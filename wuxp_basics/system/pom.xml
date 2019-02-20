@@ -14,7 +14,7 @@
     <dependencies>
         <dependency>
             <groupId>com.wuxp.basic</groupId>
-            <artifactId>wuxp_basic</artifactId>
+            <artifactId>wuxp_basic_common</artifactId>
             <version>${wuxp.basic.version}</version>
         </dependency>
     </dependencies>

@@ -27,7 +27,7 @@
         <dependency>
             <groupId>com.wuxp.common</groupId>
             <artifactId>wuxp_common_service</artifactId>
-            <version>0.0.1</version>
+            <version>${wuxp.common.version}</version>
         </dependency>
     </dependencies>
 
