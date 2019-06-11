@@ -17,8 +17,8 @@ public abstract class BaseServiceReq {
     @Desc("appId")
     protected String appId;
 
-    @Desc("秘钥")
-    protected String secretKey;
+    @Desc("app secret")
+    protected String appSecret;
 
     @Desc("客户端渠道")
     protected String clientChannel;

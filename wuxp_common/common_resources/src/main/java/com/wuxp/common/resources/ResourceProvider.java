@@ -4,6 +4,9 @@ import java.util.List;
 
 /**
  * resource provider
+ * <p>
+ *    responsible for resource maintenance and screening
+ * </p>
  */
 public interface ResourceProvider<R extends Resource<ID>, ID> {
 
@@ -21,7 +24,6 @@ public interface ResourceProvider<R extends Resource<ID>, ID> {
         return this.deletedById(resource.getUniqueIdentifier());
     }
 
-    boolean deletedById(ID id);
 
     default int deleted(ResourceFindCondition condition) {
 
@@ -34,6 +36,8 @@ public interface ResourceProvider<R extends Resource<ID>, ID> {
         }
         return count;
     }
+
+    boolean deletedById(ID id);
 
     /**
      * find resource instance by unique identifier

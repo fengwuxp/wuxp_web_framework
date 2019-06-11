@@ -1,9 +1,11 @@
 package com.wuxp.common.resources;
 
 
-
 /**
  * resource
+ * <p>
+ * all can be considered as resources, this is a logical abstraction
+ * </p>
  */
 public interface Resource<ID> {
 
@@ -15,8 +17,12 @@ public interface Resource<ID> {
     ID getUniqueIdentifier();
 
     /**
-     *
      * @return resource type
      */
     ResourceType getResourceType();
+
+    /**
+     * @return class type of resource
+     */
+    Class<ID> getClassType();
 }

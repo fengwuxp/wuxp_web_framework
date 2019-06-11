@@ -353,6 +353,7 @@
                                         <filtering>true</filtering>
                                         <excludes>
                                             <exclude>**/*.properties</exclude>
+                                            <exclude>**/*.yml</exclude>
                                         </excludes>
                                     </resource>
                                 </resources>
