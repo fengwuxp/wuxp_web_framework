@@ -69,7 +69,7 @@
 
 #### 社区开源库（需要了解）
 - 阿里开源的 ant-design系列，包括pc端到移动端到react-native，react angular、vue应有尽有 [ant-design](https://github.com/ant-design)
-- [element-ui]https://github.com/ElemeFE)
+- [element-ui](https://github.com/ElemeFE)
 - [loadsh]()
 - 小程序开发，京东[tarojs](https://github.com/NervJS/taro-ui)
 
