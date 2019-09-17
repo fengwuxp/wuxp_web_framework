@@ -83,6 +83,7 @@
 
 #### typescript (需要掌握)
 - [中文官网](https://www.tslang.cn/)
+- [tpescyipt使用手册](https://github.com/zhongsp/TypeScript)
 ```
   typescript是js的超集，一切js支持的，typescript都支持。
   typescript是为了微软和谷歌解决在项目（中大型）中，由于js的动态性（灵活性、不可控）而发明的语言。
