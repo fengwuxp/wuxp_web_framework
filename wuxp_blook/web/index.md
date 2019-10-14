@@ -1,7 +1,11 @@
 ## web前端相关
 
+#### 目录
+- [basic基础篇--前端项目工程结构](./basic/前端项目工程结构.md)
+
 #### 前置资料库(可以优先参考)
 - [javaScript学习笔记](https://github.com/anbang/javascript-notes)
+- [ECMAScript6 入门](http://es6.ruanyifeng.com/)
 
 #### 基础知识概览(必须掌握、熟练使用) (文末有附图)
 
