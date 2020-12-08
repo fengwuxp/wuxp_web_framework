@@ -116,3 +116,5 @@ http.sessionManagement()
 - 实现SecurityConfigurerAdapter 用于将以上自定义的实现配置到spring security中
 
 #### 访问控制，权限
+- url权限、方法权限
+- 数据权限（acl access control layer）
